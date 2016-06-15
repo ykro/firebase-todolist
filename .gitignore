@@ -9,3 +9,4 @@ google-services.json
 projectFilesBackup/
 .idea
 *.iml
+gradle.properties

@@ -1,23 +1,5 @@
 <resources>
     <string name="app_name">ToDoList</string>
-    <string name="msg_add_element">Agregar un elemento nuevo</string>
-    <string name="msg_email">Email</string>
-    <string name="msg_password">Password</string>
-    <string name="msg_login">Inicio de sesión</string>
-    <string name="msg_error_login">Imposible iniciar sesión %s</string>
-    <string name="action_logout">Cerrar sesión</string>
-    <string name="title_activity_login">Sign in</string>
-
-    <!-- Strings related to login -->
-    <string name="prompt_email">Email</string>
-    <string name="prompt_password">Password (optional)</string>
-    <string name="action_sign_in">Sign in or register</string>
-    <string name="action_sign_in_short">Sign in</string>
-    <string name="error_invalid_email">This email address is invalid</string>
-    <string name="error_invalid_password">This password is too short</string>
-    <string name="error_incorrect_password">This password is incorrect</string>
-    <string name="error_field_required">This field is required</string>
-    <string name="permission_rationale">"Contacts permissions are needed for providing email
-        completions."
-    </string>
+    <string name="main.message.addelement">Agregar un elemento nuevo</string>
+    <string name="main.menu.action.logout">Cerrar sesión</string>
 </resources>
