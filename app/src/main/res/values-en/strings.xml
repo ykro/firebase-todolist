@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ToDoList</string>
+    <string name="main.message.addelement">Add new item</string>
+    <string name="main.menu.action.logout">Logout</string>
+</resources>
