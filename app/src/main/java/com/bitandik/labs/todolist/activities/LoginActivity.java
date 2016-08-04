@@ -26,38 +26,38 @@ public class LoginActivity extends AppCompatActivity {
     doLogin();
   }
 
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-      super.onActivityResult(requestCode, resultCode, data);
-      if (requestCode == RC_SIGN_IN) {
-        if (resultCode == RESULT_OK) {
-          doLogin();
-          finish();
-        }
+  @Override
+  public void onActivityResult(int requestCode, int resultCode, Intent data) {
+    super.onActivityResult(requestCode, resultCode, data);
+    if (requestCode == RC_SIGN_IN) {
+      if (resultCode == RESULT_OK) {
+        doLogin();
+        finish();
       }
     }
+  }
 
-    private void doLogin() {
-      FirebaseUser currentUser = auth.getCurrentUser();
-      if (currentUser != null) {
-        String username = currentUser.getDisplayName();
-        SharedPreferences prefs = getApplication().getSharedPreferences("ToDoPrefs", 0);
-        prefs.edit().putString("username", username).commit();
-        Intent i = new Intent(this, MainActivity.class);
-        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP
-            | Intent.FLAG_ACTIVITY_NEW_TASK
-            | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        startActivity(i);
-      } else {
-        startActivityForResult(
-            AuthUI.getInstance()
-                .createSignInIntentBuilder()
-                .setProviders(
-                    AuthUI.EMAIL_PROVIDER,
-                    AuthUI.GOOGLE_PROVIDER,
-                    AuthUI.FACEBOOK_PROVIDER)
-                .build(),
-                  RC_SIGN_IN);
-      }
-    }
+private void doLogin() {
+  FirebaseUser currentUser = auth.getCurrentUser();
+  if (currentUser != null) {
+    String username = currentUser.getDisplayName();
+    SharedPreferences prefs = getApplication().getSharedPreferences("ToDoPrefs", 0);
+    prefs.edit().putString("username", username).commit();
+    Intent i = new Intent(this, MainActivity.class);
+    i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP
+        | Intent.FLAG_ACTIVITY_NEW_TASK
+        | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+    startActivity(i);
+  } else {
+    startActivityForResult(
+        AuthUI.getInstance()
+            .createSignInIntentBuilder()
+            .setProviders(
+                AuthUI.EMAIL_PROVIDER,
+                AuthUI.GOOGLE_PROVIDER,
+                AuthUI.FACEBOOK_PROVIDER)
+            .build(),
+              RC_SIGN_IN);
+  }
+}
 }

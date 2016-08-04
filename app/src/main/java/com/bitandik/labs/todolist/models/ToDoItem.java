@@ -4,7 +4,6 @@ package com.bitandik.labs.todolist.models;
  * Created by ykro on 9/14/15.
  */
 public class ToDoItem {
-  private String key;
   private String item;
   private String username;
   private boolean completed;
@@ -15,14 +14,6 @@ public class ToDoItem {
       this.username = username;
       this.item = item;
       this.completed = false;
-  }
-
-  public String getKey() {
-      return key;
-  }
-
-  public void setKey(String key) {
-      this.key = key;
   }
 
   public String getUsername() {

@@ -19,7 +19,7 @@ public class ToDoApplication extends Application {
     itemsReference = database.getReference(ITEMS_CHILD_NAME);
     auth = FirebaseAuth.getInstance();
   }
-
+  //getters
   public DatabaseReference getItemsReference() {
     return itemsReference;
   }
